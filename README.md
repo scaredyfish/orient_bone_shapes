@@ -1,6 +1,6 @@
 # Orient bone shapes
 
-This addon adds 4 operators to Blender, available from the pose mode context menu (right click, or W key, depending on keymap)
+This addon adds 4 operators to Blender, available from the pose mode context menu (right click, or W key, depending on keymap). This addon is for Blender 2.8 only. For 2.79 and earlier, see the original addon linked below.
 
 ## Set and align bone shape
 
