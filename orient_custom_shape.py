@@ -181,16 +181,6 @@ class POSE_OT_set_bone_shape_in_place(bpy.types.Operator):
 
         return {'FINISHED'}
 
-def render_panel(self, context):
-    layout = self.layout
-
-    flow = layout.grid_flow(row_major=True, columns=0, even_columns=True, even_rows=False, align=True)
-
-    if context.selected_pose_bones and context.selected_pose_bones[0].custom_shape:
-        flow.operator("pose.extract_custom_shape", text="Extract custom bone shape") 
-        flow.operator("pose.align_bone_shape", text="Align bone shape") 
-    
-    flow.operator("pose.set_bone_shape_in_place", text="Set and align bone shape")
 
 def render_menu(self, context):
     layout = self.layout
@@ -206,7 +196,6 @@ def register():
     bpy.utils.register_class(POSE_OT_align_bone_shape)
     bpy.utils.register_class(POSE_OT_set_bone_shape_in_place)
     bpy.utils.register_class(POSE_OT_extract_custom_shape)
-    bpy.types.BONE_PT_display.append(render_panel)
     bpy.types.VIEW3D_MT_pose_context_menu.append(render_menu)
 
 def unregister():
@@ -214,5 +203,4 @@ def unregister():
     bpy.utils.unregister_class(POSE_OT_align_bone_shape)
     bpy.utils.unregister_class(POSE_OT_set_bone_shape_in_place)
     bpy.utils.unregister_class(POSE_OT_extract_custom_shape)
-    bpy.types.BONE_PT_display.remove(render_panel)
     bpy.types.VIEW3D_MT_pose_context_menu.remove(render_menu)
