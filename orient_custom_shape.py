@@ -129,13 +129,13 @@ class POSE_OT_align_bone_shape(bpy.types.Operator):
 
         shape.matrix_world = mat @ shape.matrix_world
 
+        bpy.ops.object.posemode_toggle()
         bpy.ops.object.select_all(action='DESELECT')
         shape.select_set(True)
         bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
-
+        shape.matrix_world = armature.matrix_world @ bone.matrix
         shape.select_set(False)
         armature.select_set(True)
-
         bpy.ops.object.posemode_toggle()
 
         return {'FINISHED'}
@@ -174,10 +174,9 @@ class POSE_OT_set_bone_shape_in_place(bpy.types.Operator):
         bpy.ops.object.select_all(action='DESELECT')
         shape.select_set(True)
         bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
-
+        shape.matrix_world = armature.matrix_world @ bone.matrix
         shape.select_set(False)
         armature.select_set(True)
-
         bpy.ops.object.posemode_toggle()
 
         return {'FINISHED'}
