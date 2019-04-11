@@ -6,7 +6,7 @@ This addon adds 4 operators to Blender, available from the pose mode context men
 
 Sets the selected bone's custom bone shape to the selected object, and transforms the shape object to keep the bone shape in the same position as the shape object is.
 
-![Set and align](img/set_and_align.PNG)
+![Set and align](img/set_and_align.gif)
 
 ## Align bone shape
 
@@ -16,12 +16,12 @@ Transforms the bone shape object of the selected bone to keep the bone shape in 
 
 Creates a duplicate of the shape object of the selected bone.
 
-![Extract bone shape](img/extract_bone_shape.PNG)
+![Extract bone shape](img/extract_bone_shape.gif)
 
 ## Snap to bone
 
 Aligns the origin, rotation and scale of the selected object to the selected bone.
 
-![Snap to bone](img/snap_to_bone.PNG)
+![Snap to bone](img/snap_to_bone.gif)
 
 This addon is based on the original orient bone shapes script found at https://developer.blender.org/F207430
