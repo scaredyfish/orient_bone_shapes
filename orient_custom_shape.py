@@ -185,8 +185,8 @@ class POSE_OT_set_bone_shape_in_place(bpy.types.Operator):
 def render_menu(self, context):
     layout = self.layout
     layout.separator()
-    layout.operator('pose.align_bone_shape', text="Align bone shape")
     layout.operator('pose.set_bone_shape_in_place', text="Set and align bone shape")
+    layout.operator('pose.align_bone_shape', text="Align bone shape")
     layout.operator('pose.extract_custom_shape', text="Extract custom bone shape")
     layout.operator('pose.snap_selected_to_bone', text="Snap to bone")
    
