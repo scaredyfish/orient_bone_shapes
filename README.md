@@ -1,4 +1,4 @@
-# orient_bone_shapes
+# Orient bone shapes
 
 This addon adds 4 operators to Blender, available from the pose mode context menu (right click, or W key, depending on keymap)
 
