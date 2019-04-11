@@ -20,20 +20,6 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
-
-bl_info = {
-    "name": "Orient Custom Shape",
-    "author": "Gilles Pagia, Ron Tarrant, Michael B, Andrew Charlton",
-    "version": (1,0,0),
-    "blender": (2, 80, 0),
-    "location": "Properties > Bone > Orient Custom Shape (visible in pose mode only)",
-    "description": "Rotates, scales and translates a custom bone shape to match rotation, scale and translation of its bone",
-    "warning": "",
-    "wiki_url": "",
-    "tracker_url": "",
-    "category": "Rigging"
-}
-
 import bpy
 from mathutils import *
 from bpy.props import BoolProperty
@@ -147,6 +133,11 @@ class POSE_OT_align_bone_shape(bpy.types.Operator):
         shape.select_set(True)
         bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
 
+        shape.select_set(False)
+        armature.select_set(True)
+
+        bpy.ops.object.posemode_toggle()
+
         return {'FINISHED'}
 
 
@@ -183,6 +174,11 @@ class POSE_OT_set_bone_shape_in_place(bpy.types.Operator):
         bpy.ops.object.select_all(action='DESELECT')
         shape.select_set(True)
         bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+
+        shape.select_set(False)
+        armature.select_set(True)
+
+        bpy.ops.object.posemode_toggle()
 
         return {'FINISHED'}
 
@@ -221,7 +217,3 @@ def unregister():
     bpy.utils.unregister_class(POSE_OT_extract_custom_shape)
     bpy.types.BONE_PT_display.remove(render_panel)
     bpy.types.VIEW3D_MT_pose_context_menu.remove(render_menu)
-  
-if __name__ == "__main__":
-    register()
-
