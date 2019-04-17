@@ -5,7 +5,7 @@ bl_info = {
     "author": "Gilles Pagia, Ron Tarrant, Michael B, Andrew Charlton",
     "version": (1, 0, 1),
     "blender": (2, 80, 0),
-    "location": "Properties > Bone > Orient Custom Shape (visible in pose mode only)",
+    "location": "Pose mode context menu",
     "description": "Rotates, scales and translates a custom bone shape to match rotation, scale and translation of its bone",
     "warning": "",
     "wiki_url": "",
