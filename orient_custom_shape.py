@@ -163,18 +163,18 @@ class POSE_OT_set_bone_shape_in_place(bpy.types.Operator):
         bone = context.selected_pose_bones[0]
         armature = context.view_layer.objects.active
         bone.custom_shape = shape
-        bone.use_custom_shape_bone_size = False
+        bone.use_custom_shape_bone_size = True
 
         mat = armature.matrix_world @ bone.matrix
         mat.invert()
 
-        shape.matrix_world = mat @ shape.matrix_world
+        shape.matrix_world = Matrix.Scale(1/bone.length, 4) @ mat @ shape.matrix_world
 
         bpy.ops.object.posemode_toggle()
         bpy.ops.object.select_all(action='DESELECT')
         shape.select_set(True)
         bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
-        shape.matrix_world = armature.matrix_world @ bone.matrix
+        shape.matrix_world = armature.matrix_world @ bone.matrix @ Matrix.Scale(bone.length, 4)
         shape.select_set(False)
         armature.select_set(True)
         bpy.ops.object.posemode_toggle()
