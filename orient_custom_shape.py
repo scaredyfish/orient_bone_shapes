@@ -98,7 +98,9 @@ class POSE_OT_snap_selected_to_bone(bpy.types.Operator):
         armature = context.view_layer.objects.active
 
         mat = armature.matrix_world @ bone.matrix
+        scale = shape.scale.copy()
         shape.matrix_world = mat
+        shape.scale = scale
 
         return {'FINISHED'}
 
