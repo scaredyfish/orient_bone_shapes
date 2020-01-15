@@ -1,9 +1,9 @@
-__version__ = '1.0.1'
+__version__ = '1.0.3'
 
 bl_info = {
     "name": "Orient Custom Shape",
-    "author": "Gilles Pagia, Ron Tarrant, Michael B, Andrew Charlton",
-    "version": (1, 0, 1),
+    "author": "Gilles Pagia, Ron Tarrant, Michael B, Andrew Charlton, Travis OBrien",
+    "version": (1, 0, 3),
     "blender": (2, 80, 0),
     "location": "Pose mode context menu",
     "description": "Rotates, scales and translates a custom bone shape to match rotation, scale and translation of its bone",
